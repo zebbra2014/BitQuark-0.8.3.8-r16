@@ -12,6 +12,9 @@ chmod +x build_detect_platform
 ./build_detect_platform build_config.mk ./
 cd ..
 make -f makefile.unix
+cd ..
+qmake "USE_UPNP=1"
+make
 
 First, make sure that the required packages for Qt4 development of your distribution are installed, these are
 
@@ -22,11 +25,6 @@ apt-get install qt4-qmake libqt4-dev build-essential libboost-dev libboost-syste
 for Ubuntu >= 12.04
 
 apt-get install qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libssl-dev libdb++-dev libminiupnpc-dev
-
-then execute the following:
-
-qmake "USE_UPNP=1"
-make
 
 An executable named `bitquark-qt` will be built.
 Alternatively, install `Qt Creator`_ and open the `bitquark-qt.pro` file.
